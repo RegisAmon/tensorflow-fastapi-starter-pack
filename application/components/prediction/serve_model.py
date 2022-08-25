@@ -86,11 +86,11 @@ import tensorflow as tf
 import numpy as np
 
 
-#tflite_interpreter = tf.lite.Interpreter(model_path="modelSavedOptimized.tflite")
-#tflite_interpreter.allocate_tensors()
+tflite_interpreter = tf.lite.Interpreter(model_path="modelSavedOptimized.tflite")
+tflite_interpreter.allocate_tensors()
 
-#input_details = tflite_interpreter.get_input_details()
-#output_details = tflite_interpreter.get_output_details()
+input_details = tflite_interpreter.get_input_details()
+output_details = tflite_interpreter.get_output_details()
 
 # print("== Input details ==")
 # print("name:", input_details[0]['name'])
