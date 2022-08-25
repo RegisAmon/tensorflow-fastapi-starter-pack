@@ -6,3 +6,5 @@ gunicorn
 uvicorn
 numpy
 python-multipart
+scikit-image
+opencv-python-headless
