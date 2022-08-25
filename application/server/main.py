@@ -2,10 +2,10 @@ import uvicorn
 from fastapi import FastAPI, File, UploadFile
 from starlette.responses import RedirectResponse
 
-from application.components import predict, read_imagefile
+from application.components import predict, read_imagefile, video_mamonreader, pred_fight, main_fight
 from application.schema import Symptom
 from application.components.prediction import symptom_check
-from application.components.prediction import video_mamonreader, pred_fight, main_fight
+from application.components import *
 
 app_desc = """<h2>Try this app by uploading any image with `predict/image`</h2>
 <h2>Try Covid symptom checker api - it is just a learning app demo</h2>
