@@ -5,6 +5,7 @@ from starlette.responses import RedirectResponse
 from application.components import predict, read_imagefile
 from application.schema import Symptom
 from application.components.prediction import symptom_check
+from application.components.prediction import video_mamonreader, pred_fight, main_fight
 
 app_desc = """<h2>Try this app by uploading any image with `predict/image`</h2>
 <h2>Try Covid symptom checker api - it is just a learning app demo</h2>
@@ -32,6 +33,13 @@ async def predict_api(file: UploadFile = File(...)):
 @app.post("/api/covid-symptom-check")
 def check_risk(symptom: Symptom):
     return symptom_check.get_risk_level(symptom)
+
+@app.post("/mainfight/")
+def mainfight(url):
+        res = main_fight(url)
+      
+ 
+        return {'label': res }
 
 
 if __name__ == "__main__":
